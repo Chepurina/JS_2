@@ -10,7 +10,6 @@ var testObj={
 	answer: ['Вариант ответа №1', 'Вариант ответа №2', 'Вариант ответа №3'],
 	submit:'',
   
-
 	CreateWrapper: function () {
 		this.wrapper=document.createElement('div');
 		this.wrapper.classList.add ('wrapper');
@@ -28,23 +27,21 @@ var testObj={
 		this.myform=document.createElement('form');
 		this.myform.classList.add ('myform');
 		this.wrapper.appendChild(this.myform);
-    },
-
+	},
 
 	CreateQuestion: function(r) {
 		this.questions=document.createElement('ul');
 		this.questions.classList.add ('question');
 		this.questions.innerHTML+=this.question[r];
 		this.myform.appendChild(this.questions);
-    },
+    	},
 
 	CreateAnswer: function(b) {
 		this.answers = document.createElement('label');
-        this.answers.classList.add('answer');
+        	this.answers.classList.add('answer');
 		this.answers.innerHTML = ' <input type="checkbox">'+this.answer[b];
 		this.questions.appendChild(this.answers); 
 	},
-
 
 	CreateSubmit: function () {
 		this.submit=document.createElement('input');
@@ -53,7 +50,6 @@ var testObj={
 		this.submit.setAttribute('value', 'Проверить мои результаты');
 		this.myform.appendChild(this.submit);
 	}
-			  
 }
 
 testObj.CreateWrapper();
@@ -61,9 +57,9 @@ testObj.CreateHeader();
 testObj.CreateForm ();
 
 	for (var i=0; i<3;i++) {
-		testObj. CreateQuestion(i);
+	     testObj. CreateQuestion(i);
 		for (var j=0; j<3;j++) {
-			testObj.CreateAnswer(j);
+		     testObj.CreateAnswer(j);
 		}
 	}
 
